@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/tp1_point.dir/src/main_point.cpp.o CMakeFiles/tp1_point.dir/src/Cartesien.cpp.o CMakeFiles/tp1_point.dir/src/Point.cpp.o CMakeFiles/tp1_point.dir/src/Polaire.cpp.o -o tp1_point  -lstdc++ -lm 

@@ -1,5 +1,0 @@
-/home/local.isima.fr/abzoghlami/shared/ZZ3/C++/tp_1/build/CMakeFiles/tp1_point.dir
-/home/local.isima.fr/abzoghlami/shared/ZZ3/C++/tp_1/build/CMakeFiles/tp1_vecteur.dir
-/home/local.isima.fr/abzoghlami/shared/ZZ3/C++/tp_1/build/CMakeFiles/tp1_test.dir
-/home/local.isima.fr/abzoghlami/shared/ZZ3/C++/tp_1/build/CMakeFiles/edit_cache.dir
-/home/local.isima.fr/abzoghlami/shared/ZZ3/C++/tp_1/build/CMakeFiles/rebuild_cache.dir
