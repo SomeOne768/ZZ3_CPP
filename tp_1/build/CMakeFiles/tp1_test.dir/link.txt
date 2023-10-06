@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/tp1_test.dir/test/catch.cpp.o CMakeFiles/tp1_test.dir/test/tp1_test.cpp.o CMakeFiles/tp1_test.dir/src/Cartesien.cpp.o CMakeFiles/tp1_test.dir/src/Point.cpp.o CMakeFiles/tp1_test.dir/src/Polaire.cpp.o -o tp1_test  -lstdc++ -lm 
