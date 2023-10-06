@@ -1,12 +1,24 @@
 #ifndef NUAGE_AZ_2023ZZ3
 #define NUAGE_AZ_2023ZZ3
+#include <vector>
+#include <Point.hpp>
+#include <Polaire.hpp>
+#include <Cartesien.hpp>
 
 class Nuage
 {
+    std::vector<Point *> v;
 
 public:
+    using const_iterator = std::vector<Point*>::const_iterator;
     Nuage();
     ~Nuage();
+    void ajouter(Point &);
+    unsigned int size() const;
+    const_iterator begin() const;
+    const_iterator end() const;
 };
+
+Cartesien barycentre(const Nuage &n);
 
 #endif

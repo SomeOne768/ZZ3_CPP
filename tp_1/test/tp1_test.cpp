@@ -263,7 +263,7 @@ TEST_CASE ( "TP1_Nuage::Ajout" ) {
 }
 
 //----------------------------------------------------------------------------------------------- 19
-/*TEST_CASE ( "TP1_Nuage::Iterateurs" ) {
+TEST_CASE ( "TP1_Nuage::Iterateurs" ) {
  Cartesien p1(12.0,24.0);
  Polaire p2(13.0,25.0);
  Polaire p3(p1);
@@ -301,10 +301,10 @@ TEST_CASE ( "TP1_Nuage::Ajout" ) {
  REQUIRE ( p7.getDistance() == Approx(26.832815).epsilon(1e-3) );
  REQUIRE ( p8.getX() == Approx(24.359251).epsilon(1e-3) );
  REQUIRE ( p8.getY() == Approx(5.623776).epsilon(1e-3) );
-}*/
+}
 
 //--------------------------------------------------------------------------------------Commun 20-22
-/*double x[] = { 3,7,13,27 };
+double x[] = { 3,7,13,27 };
 double y[] = { 4,8,16,32 };
 
 Cartesien p1(x[0],y[0]);
@@ -312,10 +312,10 @@ Cartesien p2(x[1],y[1]);
 Cartesien p3(x[2],y[2]);
 Cartesien p4(x[3],y[3]);
 
-Nuage n;*/
+Nuage n;
 
 //----------------------------------------------------------------------------------------------- 20
-/*TEST_CASE ( "TP1_Nuage::Barycentre" ) {
+TEST_CASE ( "TP1_Nuage::Barycentre" ) {
  n.ajouter(p1);
  n.ajouter(p2);
  n.ajouter(p3);
@@ -325,15 +325,15 @@ Nuage n;*/
 
  REQUIRE ( b.getX() == Approx((x[0]+x[1]+x[2]+x[3])/4) );
  REQUIRE ( b.getY() == Approx((y[0]+y[1]+y[2]+y[3])/4) );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 21
-/*TEST_CASE ( "TP1_Nuage::BarycentreCartesien" ) {
+TEST_CASE ( "TP1_Nuage::BarycentreCartesien" ) {
  Cartesien b = BarycentreCartesien()(n);
 
  REQUIRE ( b.getX() == Approx((x[0]+x[1]+x[2]+x[3])/4) );
  REQUIRE ( b.getY() == Approx((y[0]+y[1]+y[2]+y[3])/4) );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 22
 /*TEST_CASE ( "TP1_Nuage::BarycentrePolaire" ) {
