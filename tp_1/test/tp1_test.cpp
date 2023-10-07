@@ -336,12 +336,12 @@ TEST_CASE ( "TP1_Nuage::BarycentreCartesien" ) {
 }
 
 //----------------------------------------------------------------------------------------------- 22
-/*TEST_CASE ( "TP1_Nuage::BarycentrePolaire" ) {
+TEST_CASE ( "TP1_Nuage::BarycentrePolaire" ) {
  Polaire p(Cartesien((x[0]+x[1]+x[2]+x[3])/4,(y[0]+y[1]+y[2]+y[3])/4));
  Polaire b = BarycentrePolaire()(n);
 
  REQUIRE ( b.getAngle() == Approx(p.getAngle()) );
  REQUIRE ( b.getDistance() == Approx(p.getDistance()) );
-}*/
+}
 
 // Fin //-------------------------------------------------------------------------------------------

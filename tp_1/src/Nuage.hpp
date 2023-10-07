@@ -21,4 +21,22 @@ public:
 
 Cartesien barycentre(const Nuage &n);
 
+class BarycentreCartesien
+{
+
+public:
+    BarycentreCartesien(){}
+    ~BarycentreCartesien(){}
+    Cartesien operator()(const Nuage &n);
+};
+
+class BarycentrePolaire
+{
+
+public:
+    BarycentrePolaire(){}
+    ~BarycentrePolaire(){}
+    Polaire operator()(const Nuage &n);
+};
+
 #endif
