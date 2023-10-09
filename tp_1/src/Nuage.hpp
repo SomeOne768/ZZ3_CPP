@@ -7,10 +7,11 @@
 
 class Nuage
 {
-    std::vector<Point *> v;
+    using Points = std::vector<Point*>;
+    Points v;
 
 public:
-    using const_iterator = std::vector<Point*>::const_iterator;
+    using const_iterator = Points::const_iterator;
     Nuage();
     ~Nuage();
     void ajouter(Point &);

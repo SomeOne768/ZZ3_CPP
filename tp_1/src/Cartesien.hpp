@@ -10,9 +10,8 @@ class Cartesien : public Point{
     double _x, _y;
 
 public:
-    virtual ~Cartesien(){};
-    Cartesien();
-    Cartesien(double, double);
+    Cartesien(); // Si on autorise x!= 0 et y=0 alors preferer val. par defaut dans l'autre constructeur
+    Cartesien(double x, double y);
     Cartesien(const Polaire &p);
     virtual std::ostream& afficher(std::ostream&) const;
     double getX() const;

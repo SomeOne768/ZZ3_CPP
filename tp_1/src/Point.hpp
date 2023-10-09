@@ -9,7 +9,7 @@ class Polaire;
 class Point{
 
 public:
-    virtual ~Point(){};
+    virtual ~Point() = default;
     virtual std::ostream& afficher(std::ostream&) const = 0;
     // friend void operator<<(std::ostream &os, const Point &p); 
     // {

@@ -9,8 +9,7 @@ class Polaire : public Point {
     double _rayon;
 
 public:
-    virtual ~Polaire(){};
-    Polaire();
+    Polaire(); // Si on autorise theta != 0 et r=0 alors preferer val. par defaut dans l'autre constructeur
     Polaire(const Cartesien &c);
     Polaire(double theta, double r);
     double getAngle() const;
