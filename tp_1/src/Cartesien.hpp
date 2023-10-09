@@ -13,7 +13,7 @@ public:
     Cartesien(); // Si on autorise x!= 0 et y=0 alors preferer val. par defaut dans l'autre constructeur
     Cartesien(double x, double y);
     Cartesien(const Polaire &p);
-    virtual std::ostream& afficher(std::ostream&) const;
+    std::ostream& afficher(std::ostream&) const override;
     double getX() const;
     double getY() const;
     void setX(double);

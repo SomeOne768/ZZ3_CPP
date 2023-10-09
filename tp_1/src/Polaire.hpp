@@ -16,7 +16,7 @@ public:
     double getDistance() const;
     void setAngle(double);
     void setDistance(double);
-    virtual std::ostream& afficher(std::ostream&) const;
+    std::ostream& afficher(std::ostream&) const override;
     virtual void convertir(Cartesien &c) const;
     virtual void convertir(Polaire &p) const;
 };
