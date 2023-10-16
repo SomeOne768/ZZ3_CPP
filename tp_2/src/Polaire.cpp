@@ -21,6 +21,11 @@ Polaire::Polaire(const Cartesien &c)
 }
 
 
+Polaire::Polaire(const Polaire &p) : _theta(p._theta), _rayon(p._rayon)
+{
+
+}
+
 double Polaire::getAngle() const
 {
     return _theta;
@@ -60,5 +65,18 @@ void Polaire::convertir(Polaire &p) const
 {
     p.setAngle(_theta);
     p.setDistance(_rayon);
+}
+
+
+Polaire& Polaire::operator=(const Polaire *p)
+{
+    //V1
+    *this = Polaire(*p);
+
+    // V2
+    // _rayon = p->_rayon;
+    // _theta = p->_theta;
+
+    return *this;
 }
 

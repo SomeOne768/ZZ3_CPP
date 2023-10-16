@@ -10,7 +10,7 @@ unsigned int Nuage<point>::size() const
 }
 
 template <typename point>
-void Nuage<point>::ajouter(point p)
+void Nuage<point>::ajouter(const point &p)
 {
     v.push_back(&p);
 }

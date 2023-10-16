@@ -12,6 +12,7 @@ public:
     virtual ~Polaire(){};
     Polaire();
     Polaire(const Cartesien &c);
+    Polaire(const Polaire &c);
     Polaire(double theta, double r);
     double getAngle() const;
     double getDistance() const;
@@ -20,6 +21,8 @@ public:
     virtual std::ostream& afficher(std::ostream&) const;
     virtual void convertir(Cartesien &c) const;
     virtual void convertir(Polaire &p) const;
+    Polaire& operator=(const Polaire *p);
+    
 };
 
 #endif

@@ -22,6 +22,10 @@ public:
     virtual void convertir(Polaire &p) const;
     virtual void convertir(Cartesien &c) const;
     virtual void convertir(Point &p) const;
+    bool operator==(const Cartesien &c)
+    {
+        return _x == c._x && _y == c._y;
+    }
 };
 
 #endif
