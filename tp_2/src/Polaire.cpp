@@ -12,12 +12,9 @@ Polaire::Polaire() : Polaire(0, 0)
 }
 
 Polaire::Polaire(const Cartesien &c)
-{
-    double  theta = atan(c.getY() / c.getX()) * 180 / M_PI,
-            rayon = sqrt(c.getX()*c.getX() + c.getY()*c.getY());
-            
-    _theta = theta;
-    _rayon = rayon;
+{    
+    _theta = c.getX() == 0? 0:atan(c.getY() / c.getX()) * 180 / M_PI;
+    _rayon = sqrt(c.getX()*c.getX() + c.getY()*c.getY());
 }
 
 

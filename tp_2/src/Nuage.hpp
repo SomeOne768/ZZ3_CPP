@@ -31,23 +31,49 @@ public:
 
 #include "Nuage.code.hpp"
 
+// Exo versio ncartesien
 template <typename point>
 point barycentre_v1(const Nuage<point> &n)
 {
     double  x = 0,
             y = 0;
-    
     unsigned int count = 0;
-    for(auto p : n)
+
+    for(auto m : n)
     {
-        x += p->getX();
-        y += p->getY();
+        Cartesien p{*m};
+        x += p.getX();
+        y += p.getY();
         count++;
     }
 
-    count = count==0? 1:count;
-    return point{x/count, y/count};
+    count = (count==0)? 1:count;
+    Cartesien barycentre{x/count, y/count};
+
+    return point{barycentre};
 }
+
+
+template <>
+Polaire barycentre_v1(const Nuage<Polaire> &n)
+{
+    double  r = 0,
+            t = 0;
+    unsigned int count = 0;
+
+    for(auto p : n)
+    {
+        r += p->getDistance();
+        t += p->getAngle();
+        count++;
+    }
+
+    double  theta = count==0? 0:t/count, // ne gere pas l'infini
+            rayon = count==0? 0:r/ count;
+
+    return Polaire {theta, rayon};
+}
+
 
 // Cartesien barycentre(const Nuage<T> &n);
 

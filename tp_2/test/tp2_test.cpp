@@ -17,12 +17,7 @@ TEST_CASE("TP2_Nuage::Ajout")
    n.ajouter(Cartesien(90, 12));
    n.ajouter(Cartesien(34, 56));
 
-   // Cartesien c = Cartesien(12, 34);
    REQUIRE(n.size() == 4u);
-   // REQUIRE(n[0]->getX() == 12);
-   // REQUIRE(n[0]->getY() == 34);
-   //  REQUIRE ( n[0]->getX() ==  12);
-   //  REQUIRE ( n[0]->getX() ==  12);
 }
 
 //------------------------------------------------------------------------------------------------ 2
@@ -87,38 +82,38 @@ TEST_CASE ( "TP2_Nuage::BarycentreCartesien_V1" ) {
 }
 
 //----------------------------------------------------------------------------------------------- 4a
-TEST_CASE ( "TP2_Nuage::BarycentrePolaire_V1" ) {
- Nuage<Polaire> n;
+// TEST_CASE ( "TP2_Nuage::BarycentrePolaire_V1" ) {
+//  Nuage<Polaire> n;
 
- Polaire p1(12,34);
- Polaire p2(56,78);
- Polaire p3(90,12);
- Polaire p4(34,56);
+//  Polaire p1(12,34);
+//  Polaire p2(56,78);
+//  Polaire p3(90,12);
+//  Polaire p4(34,56);
 
- Polaire b1 = barycentre_v1(n);
+//  Polaire b1 = barycentre_v1(n);
 
- REQUIRE ( b1.getAngle() == Approx(0.0) );
- REQUIRE ( b1.getDistance() == Approx(0.0) );
+//  REQUIRE ( b1.getAngle() == Approx(0.0) );
+//  REQUIRE ( b1.getDistance() == Approx(0.0) );
 
- n.ajouter(p1);
+//  n.ajouter(p1);
 
- Polaire b2 = barycentre_v1(n);
+//  Polaire b2 = barycentre_v1(n);
 
- REQUIRE ( b2.getAngle() == Approx(p1.getAngle()) );
- REQUIRE ( b2.getDistance() == Approx(p1.getDistance()) );
+//  REQUIRE ( b2.getAngle() == Approx(p1.getAngle()) );
+//  REQUIRE ( b2.getDistance() == Approx(p1.getDistance()) );
 
- n.ajouter(p2);
- n.ajouter(p3);
- n.ajouter(p4);
+//  n.ajouter(p2);
+//  n.ajouter(p3);
+//  n.ajouter(p4);
 
- Polaire b3 = barycentre_v1(n);
+//  Polaire b3 = barycentre_v1(n);
 
- REQUIRE ( b3.getAngle() == Approx(43.017260).epsilon(1e-3) );
- REQUIRE ( b3.getDistance() == Approx(42.159772).epsilon(1e-3) );
-}
+//  REQUIRE ( b3.getAngle() == Approx(43.017260).epsilon(1e-3) );
+//  REQUIRE ( b3.getDistance() == Approx(42.159772).epsilon(1e-3) );
+// }
 
 //----------------------------------------------------------------------------------------------- 4b
-/*TEST_CASE ( "TP2_Nuage::BarycentrePolaire_V1" ) {
+TEST_CASE ( "TP2_Nuage::BarycentrePolaire_V1" ) {
  Nuage<Polaire> n;
 
  Polaire p1(12,34);
@@ -149,7 +144,7 @@ TEST_CASE ( "TP2_Nuage::BarycentrePolaire_V1" ) {
 
  REQUIRE ( b3.getDistance() == Approx((p1.getDistance()+p2.getDistance()
                                       +p3.getDistance()+p4.getDistance())/4) );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 5
 /*TEST_CASE ( "TP2_Nuage::BarycentreCartesien_V2" ) {

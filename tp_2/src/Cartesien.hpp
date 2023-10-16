@@ -14,6 +14,7 @@ public:
     Cartesien();
     Cartesien(double, double);
     Cartesien(const Polaire &p);
+    Cartesien(const Cartesien &c);
     virtual std::ostream& afficher(std::ostream&) const;
     double getX() const;
     double getY() const;

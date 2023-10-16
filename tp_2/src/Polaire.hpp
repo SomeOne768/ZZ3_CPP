@@ -12,7 +12,7 @@ public:
     virtual ~Polaire(){};
     Polaire();
     Polaire(const Cartesien &c);
-    Polaire(const Polaire &c);
+    Polaire(const Polaire &p);
     Polaire(double theta, double r);
     double getAngle() const;
     double getDistance() const;
