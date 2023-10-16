@@ -51,35 +51,35 @@ TEST_CASE("TP2_Nuage::Iterateurs")
 }
 
 //------------------------------------------------------------------------------------------------ 3
-TEST_CASE ( "TP2_Nuage::BarycentreCartesien_V1" ) {
- Nuage<Cartesien> n;
+// TEST_CASE ( "TP2_Nuage::BarycentreCartesien_V1" ) {
+//  Nuage<Cartesien> n;
 
- Cartesien p1(12,34);
- Cartesien p2(56,78);
- Cartesien p3(90,12);
- Cartesien p4(34,56);
+//  Cartesien p1(12,34);
+//  Cartesien p2(56,78);
+//  Cartesien p3(90,12);
+//  Cartesien p4(34,56);
 
- Cartesien b1 = barycentre_v1(n);
+//  Cartesien b1 = barycentre_v1(n);
 
- REQUIRE ( b1.getX() == Approx(0.0) );
- REQUIRE ( b1.getY() == Approx(0.0) );
+//  REQUIRE ( b1.getX() == Approx(0.0) );
+//  REQUIRE ( b1.getY() == Approx(0.0) );
 
- n.ajouter(p1);
+//  n.ajouter(p1);
 
- Cartesien b2 = barycentre_v1(n);
+//  Cartesien b2 = barycentre_v1(n);
 
- REQUIRE ( b2.getX() == Approx(p1.getX()) );
- REQUIRE ( b2.getY() == Approx(p1.getY()) );
+//  REQUIRE ( b2.getX() == Approx(p1.getX()) );
+//  REQUIRE ( b2.getY() == Approx(p1.getY()) );
 
- n.ajouter(p2);
- n.ajouter(p3);
- n.ajouter(p4);
+//  n.ajouter(p2);
+//  n.ajouter(p3);
+//  n.ajouter(p4);
 
- Cartesien b3 = barycentre_v1(n);
+//  Cartesien b3 = barycentre_v1(n);
 
- REQUIRE ( b3.getX() == Approx((p1.getX()+p2.getX()+p3.getX()+p4.getX())/4) );
- REQUIRE ( b3.getY() == Approx((p1.getY()+p2.getY()+p3.getY()+p4.getY())/4) );
-}
+//  REQUIRE ( b3.getX() == Approx((p1.getX()+p2.getX()+p3.getX()+p4.getX())/4) );
+//  REQUIRE ( b3.getY() == Approx((p1.getY()+p2.getY()+p3.getY()+p4.getY())/4) );
+// }
 
 //----------------------------------------------------------------------------------------------- 4a
 // TEST_CASE ( "TP2_Nuage::BarycentrePolaire_V1" ) {
@@ -113,41 +113,41 @@ TEST_CASE ( "TP2_Nuage::BarycentreCartesien_V1" ) {
 // }
 
 //----------------------------------------------------------------------------------------------- 4b
-TEST_CASE ( "TP2_Nuage::BarycentrePolaire_V1" ) {
- Nuage<Polaire> n;
+// TEST_CASE ( "TP2_Nuage::BarycentrePolaire_V1" ) {
+//  Nuage<Polaire> n;
 
- Polaire p1(12,34);
- Polaire p2(56,78);
- Polaire p3(90,12);
- Polaire p4(34,56);
+//  Polaire p1(12,34);
+//  Polaire p2(56,78);
+//  Polaire p3(90,12);
+//  Polaire p4(34,56);
 
- Polaire b1 = barycentre_v1(n);
+//  Polaire b1 = barycentre_v1(n);
 
- REQUIRE ( b1.getAngle() == Approx(0.0) );
- REQUIRE ( b1.getDistance() == Approx(0.0) );
+//  REQUIRE ( b1.getAngle() == Approx(0.0) );
+//  REQUIRE ( b1.getDistance() == Approx(0.0) );
 
- n.ajouter(p1);
+//  n.ajouter(p1);
 
- Polaire b2 = barycentre_v1(n);
+//  Polaire b2 = barycentre_v1(n);
 
- REQUIRE ( b2.getAngle() == Approx(p1.getAngle()) );
- REQUIRE ( b2.getDistance() == Approx(p1.getDistance()) );
+//  REQUIRE ( b2.getAngle() == Approx(p1.getAngle()) );
+//  REQUIRE ( b2.getDistance() == Approx(p1.getDistance()) );
 
- n.ajouter(p2);
- n.ajouter(p3);
- n.ajouter(p4);
+//  n.ajouter(p2);
+//  n.ajouter(p3);
+//  n.ajouter(p4);
 
- Polaire b3 = barycentre_v1(n);
+//  Polaire b3 = barycentre_v1(n);
 
- REQUIRE ( b3.getAngle() == Approx((p1.getAngle()+p2.getAngle()
-                                   +p3.getAngle()+p4.getAngle())/4) );
+//  REQUIRE ( b3.getAngle() == Approx((p1.getAngle()+p2.getAngle()
+//                                    +p3.getAngle()+p4.getAngle())/4) );
 
- REQUIRE ( b3.getDistance() == Approx((p1.getDistance()+p2.getDistance()
-                                      +p3.getDistance()+p4.getDistance())/4) );
-}
+//  REQUIRE ( b3.getDistance() == Approx((p1.getDistance()+p2.getDistance()
+//                                       +p3.getDistance()+p4.getDistance())/4) );
+// }
 
 //------------------------------------------------------------------------------------------------ 5
-/*TEST_CASE ( "TP2_Nuage::BarycentreCartesien_V2" ) {
+TEST_CASE ( "TP2_Nuage::BarycentreCartesien_V2" ) {
  Nuage<Cartesien> n;
 
  Cartesien p1(12,34);
@@ -175,38 +175,38 @@ TEST_CASE ( "TP2_Nuage::BarycentrePolaire_V1" ) {
 
  REQUIRE ( b3.getX() == Approx((p1.getX()+p2.getX()+p3.getX()+p4.getX())/4) );
  REQUIRE ( b3.getY() == Approx((p1.getY()+p2.getY()+p3.getY()+p4.getY())/4) );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 6
-/*TEST_CASE ( "TP2_Nuage::BarycentreCartesienVecteur" ) {
- std::vector<Cartesien> n;
+// TEST_CASE ( "TP2_Nuage::BarycentreCartesienVecteur" ) {
+//  std::vector<Cartesien> n;
 
- Cartesien p1(12,34);
- Cartesien p2(56,78);
- Cartesien p3(90,12);
- Cartesien p4(34,56);
+//  Cartesien p1(12,34);
+//  Cartesien p2(56,78);
+//  Cartesien p3(90,12);
+//  Cartesien p4(34,56);
 
- Cartesien b1 = barycentre_v2(n);
+//  Cartesien b1 = barycentre_v2(n);
 
- REQUIRE ( b1.getX() == Approx(0.0) );
- REQUIRE ( b1.getY() == Approx(0.0) );
+//  REQUIRE ( b1.getX() == Approx(0.0) );
+//  REQUIRE ( b1.getY() == Approx(0.0) );
 
- n.push_back(p1);
+//  n.push_back(p1);
 
- Cartesien b2 = barycentre_v2(n);
+//  Cartesien b2 = barycentre_v2(n);
 
- REQUIRE ( b2.getX() == Approx(p1.getX()) );
- REQUIRE ( b2.getY() == Approx(p1.getY()) );
+//  REQUIRE ( b2.getX() == Approx(p1.getX()) );
+//  REQUIRE ( b2.getY() == Approx(p1.getY()) );
 
- n.push_back(p2);
- n.push_back(p3);
- n.push_back(p4);
+//  n.push_back(p2);
+//  n.push_back(p3);
+//  n.push_back(p4);
 
- Cartesien b3 = barycentre_v2(n);
+//  Cartesien b3 = barycentre_v2(n);
 
- REQUIRE ( b3.getX() == Approx((p1.getX()+p2.getX()+p3.getX()+p4.getX())/4) );
- REQUIRE ( b3.getY() == Approx((p1.getY()+p2.getY()+p3.getY()+p4.getY())/4) );
-}*/
+//  REQUIRE ( b3.getX() == Approx((p1.getX()+p2.getX()+p3.getX()+p4.getX())/4) );
+//  REQUIRE ( b3.getY() == Approx((p1.getY()+p2.getY()+p3.getY()+p4.getY())/4) );
+// }
 
 //------------------------------------------------------------------------------------------------ 7
 /*TEST_CASE ( "TP2_Nuage::BarycentrePolaire_V2" ) {
