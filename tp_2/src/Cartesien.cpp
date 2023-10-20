@@ -24,6 +24,11 @@ Cartesien::Cartesien(const Cartesien &c) : _x(c._x), _y(c._y)
 
 }
 
+Cartesien::Cartesien(const Cartesien *c) : _x(c->_x), _y(c->_y)
+{
+
+}
+
 std::ostream& Cartesien::afficher(std::ostream &os) const {
     os << "(x=" << _x << ";y=" << _y << ")";
     return os;

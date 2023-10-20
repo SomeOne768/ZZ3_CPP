@@ -83,7 +83,7 @@ point barycentre_v2(const conteneur<point> &n)
 
     for(auto m : n)
     {
-        Cartesien p{*m};
+        Cartesien p{m};
         x += p.getX();
         y += p.getY();
         count++;
