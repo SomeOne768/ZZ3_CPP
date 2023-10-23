@@ -62,34 +62,34 @@ TEST_CASE ( "TP3_Chaine::ConversionSimple" ) {
  REQUIRE ( chaine(n) == "Smith" );
  REQUIRE ( erreur == 0 );
 
-//  try { std::cout << "i = " << chaine(i) << std::endl; }
-//  catch (const ExceptionChaine & e) { erreur=2; }
+ try { std::cout << "i = " << chaine(i) << std::endl; }
+ catch (const ExceptionChaine & e) { erreur=2; }
 
-//  REQUIRE ( chaine(i) == "10" );
-//  REQUIRE ( erreur == 0 );
+ REQUIRE ( chaine(i) == "10" );
+ REQUIRE ( erreur == 0 );
 
-//  try { std::cout << "d = " << chaine(d) << std::endl; }
-//  catch (const ExceptionChaine & e) { erreur=3; }
+ try { std::cout << "d = " << chaine(d) << std::endl; }
+ catch (const ExceptionChaine & e) { erreur=3; }
 
-//  REQUIRE ( chaine(d) == "13.270000" );
-//  REQUIRE ( erreur == 0 );
+ REQUIRE ( chaine(d) == "13.270000" );
+ REQUIRE ( erreur == 0 );
 
-//  try { std::cout << "j = " << chaine(j) << std::endl; }
+ try { std::cout << "j = " << chaine(j) << std::endl; }
 
-//  catch (const ExceptionChaine & e) {
-//   std::string message1 = e.what();
-//   std::string message2 = "Conversion en chaine impossible pour '"+type_name(j)+"'";
+ catch (const ExceptionChaine & e) {
+  std::string message1 = e.what();
+  std::string message2 = "Conversion en chaine impossible pour '"+type_name(j)+"'";
 
-//   std::cout << "<null>" << std::endl;
-//   REQUIRE ( message1 == message2 );
-//   erreur=4;
-//  }
+  std::cout << "<null>" << std::endl;
+  REQUIRE ( message1 == message2 );
+  erreur=4;
+ }
 
-//  REQUIRE ( erreur == 4 );
+ REQUIRE ( erreur == 4 );
 }
 
 //------------------------------------------------------------------------------------------------ 3
-/*TEST_CASE ( "TP3_Chaine::ConversionVariadic" ) {
+TEST_CASE ( "TP3_Chaine::ConversionVariadic" ) {
  std::string n = "Smith";
  int i = 10;
  double d = 13.27;
@@ -117,7 +117,7 @@ TEST_CASE ( "TP3_Chaine::ConversionSimple" ) {
  }
 
  REQUIRE ( erreur == 2 );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 4
 /*TEST_CASE ( "TP3_Chaine::ConversionTuple1" ) {
