@@ -183,7 +183,7 @@ TEST_CASE ( "TP3_Chaine::ConversionTuple2" ) {
 //------------------------------------------------------------------------------------------------ 6
 using Personne = std::tuple<Identite,Date>;
 
-/*TEST_CASE ( "TP3_Chaine::ConversionCompositionTuples" ) {
+TEST_CASE ( "TP3_Chaine::ConversionCompositionTuples" ) {
  Identite i = { "Smith", "John" };
  Date     d = { 13, 07, 2003 };
  Personne p = { i,d };
@@ -197,7 +197,7 @@ using Personne = std::tuple<Identite,Date>;
             || chaine(p) == "Smith John  13 7 2003  ") == true );
 
  REQUIRE ( erreur == 0 );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 7
 /*TEST_CASE ( "TP3_Metaprog::Factorielle" ) {
