@@ -11,7 +11,7 @@
 
 // Tests //-----------------------------------------------------------------------------------------
 
-// template <typename T> std::string type_name(T && x) { return demangle(typeid(x).name()); }
+template <typename T> std::string type_name(T && x) { return demangle(typeid(x).name()); }
 
 //------------------------------------------------------------------------------------------------ 1
 TEST_CASE ( "TP3_Chaine::Exception" ) {
@@ -120,7 +120,7 @@ TEST_CASE ( "TP3_Chaine::ConversionVariadic" ) {
 }
 
 //------------------------------------------------------------------------------------------------ 4
-/*TEST_CASE ( "TP3_Chaine::ConversionTuple1" ) {
+TEST_CASE ( "TP3_Chaine::ConversionTuple1" ) {
  std::tuple<std::string,int,double>      t1{"Smith",10,13.27};
  std::tuple<std::string,int,double,long> t2{"Smith",10,13.27,100};
 
@@ -128,6 +128,7 @@ TEST_CASE ( "TP3_Chaine::ConversionVariadic" ) {
 
  try { std::cout << "t1 = " << chaine(t1) << std::endl; }
  catch (const ExceptionChaine & e) { erreur=1; }
+
 
  REQUIRE ( (chaine(t1) == "Smith 10 13.270000"
             || chaine(t1) == "Smith 10 13.270000 ") == true );
@@ -146,14 +147,14 @@ TEST_CASE ( "TP3_Chaine::ConversionVariadic" ) {
  }
 
  REQUIRE ( erreur == 2 );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 5
 using Identite = std::tuple<std::string,std::string>; // {nom,prenom}
 using Date = std::tuple<int,int,int>; // {jour,mois,annee}
 using Coordonnees = std::tuple<double,double>; // {x,y}
 
-/*TEST_CASE ( "TP3_Chaine::ConversionTuple2" ) {
+TEST_CASE ( "TP3_Chaine::ConversionTuple2" ) {
  Identite    i = { "Smith", "John" };
  Date        d = { 13, 07, 2003 };
  Coordonnees c = { 1.234, 6.789 };
@@ -177,7 +178,7 @@ using Coordonnees = std::tuple<double,double>; // {x,y}
             || chaine(c) == "1.234000 6.789000 ") == true );
 
  REQUIRE ( erreur == 0 );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 6
 using Personne = std::tuple<Identite,Date>;

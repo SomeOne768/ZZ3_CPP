@@ -2,6 +2,7 @@
 #include <iostream>
 #include <sstream>
 
+
 class ExceptionChaine : public std::exception
 {
 
@@ -25,24 +26,17 @@ public:
 };
 
 template <typename T>
-std::string type_name(T &&x) { return demangle(typeid(x).name()); }
-
-template <typename T>
-std::string chaine(T &x)
+const std::string chaine(const T &x)
 {
-    // std::string s = "Conversion en chaine impossible pour '" + type_name(x) + "'";
-    // throw ExceptionChaine(s);
     throw ExceptionChaine(x);
 }
 
-
-std::string chaine(std::string &x)
+const std::string chaine(const std::string &x)
 {
- return x;   
+    return x;
 }
 
-
-std::string chaine(int &x)
+const std::string chaine(const int &x)
 {
     std::stringstream iss{};
     iss << x;
@@ -50,13 +44,28 @@ std::string chaine(int &x)
     return iss.str();
 }
 
-std::string chaine(double &x)
+const std::string chaine(const double &x)
 {
     return std::to_string(x);
 }
 
 template <typename... T>
-std::string chaine(T... x)
+const std::string chaine(const T... x)
 {
-    return ( (chaine(x) + " ") + ...);
+    return ((chaine(x) + " ") + ...);
+}
+
+
+template <typename T, size_t... I>
+const std::string chaine(const T &t, std::index_sequence<I...>)
+{
+    return chaine(std::get<I>(t)...);
+}
+
+
+// /!\ Attention, si défini après (et pas de déclaration) appelera la version template normal !
+template <typename... Args>
+const std::string chaine(std::tuple<Args...> &t)
+{
+    return chaine(t, std::make_index_sequence<sizeof...(Args)>());
 }
