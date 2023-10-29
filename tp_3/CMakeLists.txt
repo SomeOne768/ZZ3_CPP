@@ -18,7 +18,7 @@ set ( PROJECT_HEADERS
       #src/cosinus.hpp
       src/demangle.hpp
       #src/exception.hpp
-      #src/exponentielle.hpp
+      src/exponentielle.hpp
       src/Factorielle.hpp
       #src/puissance.hpp
     )
