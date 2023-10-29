@@ -19,7 +19,7 @@ set ( PROJECT_HEADERS
       src/demangle.hpp
       #src/exception.hpp
       #src/exponentielle.hpp
-      #src/factorielle.hpp
+      src/Factorielle.hpp
       #src/puissance.hpp
     )
 

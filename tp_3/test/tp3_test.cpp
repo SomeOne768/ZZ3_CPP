@@ -6,6 +6,7 @@
 #include <demangle.hpp>
 
 #include <chaine.hpp>
+#include <Factorielle.hpp>
 //#include <cosinus.hpp>
 //#include <exponentielle.hpp>
 
@@ -198,6 +199,16 @@ TEST_CASE ( "TP3_Chaine::ConversionCompositionTuples" ) {
 
  REQUIRE ( erreur == 0 );
 }
+
+
+TEST_CASE ( "TP3_Metaprog::Factorielle" ) {
+ int f1 = Factorielle<1>();
+ int f5 = Factorielle<5>();
+
+ REQUIRE ( f1 == 1u );
+ REQUIRE ( f5 == 5u*4u*3u*2u );
+}
+
 
 //------------------------------------------------------------------------------------------------ 7
 /*TEST_CASE ( "TP3_Metaprog::Factorielle" ) {
