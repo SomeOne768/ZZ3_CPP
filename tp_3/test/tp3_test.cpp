@@ -9,6 +9,7 @@
 #include <Factorielle.hpp>
 #include <Puissance.hpp>
 #include <cosinus.hpp>
+#include <sinus.hpp>
 #include <exponentielle.hpp>
 
 // Tests //-----------------------------------------------------------------------------------------
@@ -244,11 +245,17 @@ TEST_CASE ( "TP3_Metaprog::Cosinus" ) {
  REQUIRE ( Cosinus<3>::valeur(1.0) == Approx(std::cos(1.0)).epsilon(1e-3) );
 }
 
+// TEST_CASE ( "TP3_Metaprog::Sinus" ) {
+//  REQUIRE ( Sinus<3>(0.0) == Approx(std::sin(0.0)).epsilon(1e-3) );
+//  REQUIRE ( Sinus<5>(-2.0) == Approx(std::sin(-2.0)).epsilon(1e-3) );
+//  REQUIRE ( Sinus<4>(1.0) == Approx(std::sin(1.0)).epsilon(1e-3) );
+// }
+
 //----------------------------------------------------------------------------------------------- 11
-/*TEST_CASE ( "TP3_Metaprog::Sinus" ) {
+TEST_CASE ( "TP3_Metaprog::Sinus" ) {
  REQUIRE ( Sinus<3>::valeur(0.0) == Approx(std::sin(0.0)).epsilon(1e-3) );
  REQUIRE ( Sinus<5>::valeur(-2.0) == Approx(std::sin(-2.0)).epsilon(1e-3) );
  REQUIRE ( Sinus<4>::valeur(1.0) == Approx(std::sin(1.0)).epsilon(1e-3) );
-}*/
+}
 
 // Fin //-------------------------------------------------------------------------------------------

@@ -21,6 +21,7 @@ set ( PROJECT_HEADERS
       src/exponentielle.hpp
       src/Factorielle.hpp
       src/Puissance.hpp
+      src/sinus.hpp
     )
 
 set ( PROJECT_SOURCES
