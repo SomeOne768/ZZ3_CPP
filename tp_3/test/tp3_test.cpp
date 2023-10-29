@@ -8,7 +8,7 @@
 #include <chaine.hpp>
 #include <Factorielle.hpp>
 #include <Puissance.hpp>
-//#include <cosinus.hpp>
+#include <cosinus.hpp>
 #include <exponentielle.hpp>
 
 // Tests //-----------------------------------------------------------------------------------------
@@ -231,12 +231,18 @@ TEST_CASE ( "TP3_Metaprog::Exponentielle" ) {
  REQUIRE ( Exponentielle<7>::valeur(1.4) == Approx(std::exp(1.4)).epsilon(1e-3) );
 }
 
+// TEST_CASE ( "TP3_Metaprog::Cosinus" ) {
+//  REQUIRE ( Cosinus<1>(0.0) == Approx(std::cos(0.0)).epsilon(1e-3) );
+//  REQUIRE ( Cosinus<4>(-2.0) == Approx(std::cos(-2.0)).epsilon(1e-3) );
+//  REQUIRE ( Cosinus<3>(1.0) == Approx(std::cos(1.0)).epsilon(1e-3) );
+// }
+
 //----------------------------------------------------------------------------------------------- 10
-/*TEST_CASE ( "TP3_Metaprog::Cosinus" ) {
+TEST_CASE ( "TP3_Metaprog::Cosinus" ) {
  REQUIRE ( Cosinus<1>::valeur(0.0) == Approx(std::cos(0.0)).epsilon(1e-3) );
  REQUIRE ( Cosinus<4>::valeur(-2.0) == Approx(std::cos(-2.0)).epsilon(1e-3) );
  REQUIRE ( Cosinus<3>::valeur(1.0) == Approx(std::cos(1.0)).epsilon(1e-3) );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 11
 /*TEST_CASE ( "TP3_Metaprog::Sinus" ) {
