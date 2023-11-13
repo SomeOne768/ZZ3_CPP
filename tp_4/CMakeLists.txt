@@ -9,17 +9,17 @@ set ( CMAKE_CXX_STANDARD 17 )
 
 # GNU C++ Options #---------------------------------------------------------------------------------
 if ( CMAKE_COMPILER_IS_GNUCXX )
- set ( CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic ${CMAKE_CXX_FLAGS}" )
+ set ( CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic -g -Og ${CMAKE_CXX_FLAGS}" )
 endif ()
 
 # Sources #-----------------------------------------------------------------------------------------
 set ( PROJECT_HEADERS
       src/carte.hpp
       src/complexe.hpp
-      #src/consommateur.hpp
+      src/consommateur.hpp
       src/mouchard.hpp
       src/paquet.hpp
-      #src/ressource.hpp
+      src/ressource.hpp
       src/usine.hpp
       src/vecteur.hpp
     )
@@ -27,7 +27,7 @@ set ( PROJECT_HEADERS
 set ( PROJECT_SOURCES
       src/carte.cpp
       src/paquet.cpp
-      #src/ressource.cpp
+      src/ressource.cpp
       src/usine.cpp
     )
 
