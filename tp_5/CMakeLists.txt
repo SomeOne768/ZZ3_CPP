@@ -9,13 +9,13 @@ set ( CMAKE_CXX_STANDARD 17 )
 
 # GNU C++ Options #---------------------------------------------------------------------------------
 if ( CMAKE_COMPILER_IS_GNUCXX )
- set ( CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic ${CMAKE_CXX_FLAGS}" )
+ set ( CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic -g ${CMAKE_CXX_FLAGS}" )
 endif ()
 
 # Sources #-----------------------------------------------------------------------------------------
 set ( PROJECT_HEADERS
       src/exemple.hpp
-      #src/classe.hpp
+      src/classe.hpp
       #src/comparateur.hpp
       src/echantillon.hpp
       #src/histogramme.hpp

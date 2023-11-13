@@ -2,6 +2,7 @@
 #include <vector>
 #include "valeur.hpp"
 #include <queue>
+#include <stdexcept>
 
 // auto mini = [](const Valeur &v1, const Valeur &v2)
 // {
@@ -20,12 +21,24 @@ public:
 
 class Echantillon
 {
-    std::vector<Valeur> v;
+    std::vector<Valeur> v{};
     // std::priority_queue<Valeur, std::deque<Valeur> ,ValeurMinFoncteur> v;
 
 public:
     unsigned int getTaille() const;
     void ajouter(float);
-    const Valeur& getMinimum() const;
-    const Valeur& getMaximum() const;
+    const Valeur &getMinimum() const;
+    const Valeur &getMaximum() const;
+    const Valeur &getValeur(unsigned int) const;
+
+    class MinMaxException : public std::domain_error
+    {
+
+    public:
+        MinMaxException() : std::domain_error("blabla") {}
+        const char *what() const noexcept override
+        {
+            return "Nothing to say...";
+        }
+    };
 };
