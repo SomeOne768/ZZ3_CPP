@@ -4,9 +4,9 @@
 #include <sstream>
 #include <type_traits>
 
-//#include <carte.hpp>
-//#include <usine.hpp>
-//#include <paquet.hpp>
+#include <carte.hpp>
+#include <usine.hpp>
+#include <paquet.hpp>
 //#include <ressource.hpp>
 //#include <consommateur.hpp>
 
@@ -20,7 +20,7 @@ struct has_public_constructor< T,
                              > : std::true_type {};
 
 //------------------------------------------------------------------------------------------------ 1
-/*TEST_CASE ( "TP4_Carte::Usine52" ) {
+TEST_CASE ( "TP4_Carte::Usine52" ) {
  UsineCarte usine;
 
  for (unsigned i = 0; i<52; ++i) {
@@ -30,10 +30,10 @@ struct has_public_constructor< T,
  }
 
  REQUIRE ( usine.getCarte() == nullptr );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 2
-/*TEST_CASE ( "TP4_Carte::CarteInterface" ) {
+TEST_CASE ( "TP4_Carte::CarteInterface" ) {
  // Contructeur de copie existe ?
  REQUIRE ( std::is_copy_constructible<Carte>::value == false );
 
@@ -42,19 +42,19 @@ struct has_public_constructor< T,
 
  // Constructeur ad hoc existe ?
  REQUIRE ( has_public_constructor<Carte>::value == false );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 3
-/*TEST_CASE ( "TP4_Carte::UsineInterface" ) {
+TEST_CASE ( "TP4_Carte::UsineInterface" ) {
  // Contructeur de copie existe ?
  REQUIRE ( std::is_copy_constructible<UsineCarte>::value == false );
 
  // Operateur d'affectation par copie existe ?
  REQUIRE ( std::is_copy_assignable<UsineCarte>::value == false );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 4
-/*TEST_CASE ( "TP4_Carte::UsineN" ) {
+TEST_CASE ( "TP4_Carte::UsineN" ) {
  const unsigned n = 32;
 
  UsineCarte usine(n);
@@ -66,10 +66,10 @@ struct has_public_constructor< T,
  }
 
  REQUIRE ( usine.getCarte() == nullptr );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 5
-/*TEST_CASE ( "TP4_Carte::PaquetRemplir" ) {
+TEST_CASE ( "TP4_Carte::PaquetRemplir" ) {
  const unsigned n = 27;
 
  paquet_t paquet;
@@ -80,10 +80,10 @@ struct has_public_constructor< T,
  for (unsigned i = 0; i<n; ++i) {
   REQUIRE ( paquet[i]->getValeur() == i );
  }
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 6
-/*TEST_CASE ( "TP4_Carte::PaquetFlux" ) {
+TEST_CASE ( "TP4_Carte::PaquetFlux" ) {
  const unsigned n = 27;
 
  paquet_t paquet;
@@ -100,7 +100,7 @@ struct has_public_constructor< T,
  for (unsigned i = 0; i<n; ++i) s2 << paquet[i]->getValeur() << " ";
 
  REQUIRE (s1.str() == s2.str());
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 7
 /*TEST_CASE ( "TP4_Carte::CarteDestruction" ) {
