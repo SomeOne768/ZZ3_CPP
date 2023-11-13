@@ -2,7 +2,8 @@
 #include "catch.hpp"
 
 #include <cmath>
-
+#include "valeur.hpp"
+#include "echantillon.hpp"
 //#include <histogramme.hpp>
 //#include <comparateur.hpp>
 
@@ -12,23 +13,23 @@
 // Tests //-----------------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------------------------ 1
-/*TEST_CASE ( "TP5_Valeur::Constructeur" ) {
+TEST_CASE ( "TP5_Valeur::Constructeur" ) {
  const double a = 12.0;
 
  Valeur v(a);
 
  REQUIRE ( v.getNombre() == Approx(a) );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 2
-/*TEST_CASE ( "TP5_Valeur::ConstructeurDefaut" ) {
+TEST_CASE ( "TP5_Valeur::ConstructeurDefaut" ) {
  Valeur v;
 
  REQUIRE ( v.getNombre() == Approx(0.0) );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 3
-/*TEST_CASE ( "TP5_Valeur::Accesseurs" ) {
+TEST_CASE ( "TP5_Valeur::Accesseurs" ) {
  const double a = 12.0;
 
  Valeur v(13.0);
@@ -36,24 +37,24 @@
  v.setNombre(a);
 
  REQUIRE ( v.getNombre() == Approx(a) );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 4
-/*TEST_CASE ( "TP5_Valeur::AccesseursConstants" ) {
+TEST_CASE ( "TP5_Valeur::AccesseursConstants" ) {
  const Valeur v;
 
  REQUIRE ( v.getNombre() == Approx(0.0) );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 5
-/*TEST_CASE ( "TP5_Echantillon::Constructeur" ) {
+TEST_CASE ( "TP5_Echantillon::Constructeur" ) {
  Echantillon e;
 
  REQUIRE ( e.getTaille() == 0u );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 6
-/*TEST_CASE ( "TP5_Echantillon::Ajout" ) {
+TEST_CASE ( "TP5_Echantillon::Ajout" ) {
  Echantillon e;
 
  double v[] = { 5.0, 10.0, 15.0, 20.0 };
@@ -61,10 +62,10 @@
  for (unsigned i = 0; i<4; ++i) e.ajouter(v[i]);
 
  REQUIRE ( e.getTaille() == 4u );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 7
-/*TEST_CASE ( "TP5_Echantillon::MinMax" ) {
+TEST_CASE ( "TP5_Echantillon::MinMax" ) {
  Echantillon e;
 
  double v[] = { 5.0, 10.0, 15.0, 20.0 };
@@ -79,7 +80,7 @@
 
  REQUIRE ( e.getMinimum().getNombre() == Approx(min) );
  REQUIRE ( e.getMaximum().getNombre() == Approx(max) );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 8
 /*TEST_CASE ( "TP5_Echantillon::MinMaxException" ) {
