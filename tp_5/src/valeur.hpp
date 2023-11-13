@@ -18,4 +18,9 @@ public:
     {
         v = x;
     }
+
+    bool operator<(const Valeur &v2) const
+    {
+        return v < v2.v;
+    }
 };

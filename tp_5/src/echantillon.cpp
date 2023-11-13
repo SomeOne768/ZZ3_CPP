@@ -1,4 +1,5 @@
 #include "echantillon.hpp"
+#include <algorithm>
 
 unsigned int Echantillon::getTaille() const
 {
@@ -7,10 +8,17 @@ unsigned int Echantillon::getTaille() const
 
 void Echantillon::ajouter(float x)
 {
-    v.push(Valeur{x});
+    v.push_back(Valeur{x});
+    // v.push(Valeur{x});
 }
 
-const Valeur Echantillon::getMinimum() const
+const Valeur &Echantillon::getMinimum() const
 {
-    return v.top();
+    return *std::min_element(v.begin(), v.end());
+    // return v.top();
+}
+
+const Valeur &Echantillon::getMaximum() const
+{
+    return *std::max_element(v.begin(), v.end());
 }
