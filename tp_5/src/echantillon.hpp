@@ -3,6 +3,7 @@
 #include "valeur.hpp"
 #include <queue>
 #include <stdexcept>
+#include <exception>
 
 // auto mini = [](const Valeur &v1, const Valeur &v2)
 // {
@@ -21,7 +22,7 @@ public:
 
 class Echantillon
 {
-    std::vector<Valeur> v{};
+    std::vector<Valeur> v;
     // std::priority_queue<Valeur, std::deque<Valeur> ,ValeurMinFoncteur> v;
 
 public:

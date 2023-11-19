@@ -56,4 +56,14 @@ public:
     {
         qty++;
     }
+
+    bool operator<(const Classe&c) const
+    {
+        return min < c.min;
+    }
+
+    friend std::ostream& operator<<(std::ostream& os, const Classe& c) {
+        os << "[" << c.min << ", " << c.max << "[ - qty:" << c.qty;
+        return os;
+    }
 };

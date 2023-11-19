@@ -18,7 +18,7 @@ set ( PROJECT_HEADERS
       src/classe.hpp
       #src/comparateur.hpp
       src/echantillon.hpp
-      #src/histogramme.hpp
+      src/histogramme.hpp
       src/valeur.hpp
     )
 

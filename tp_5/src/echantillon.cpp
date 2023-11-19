@@ -1,7 +1,9 @@
 #include "echantillon.hpp"
 #include <algorithm>
-
+#include <exception>
 #include <stdexcept>
+#include <iostream>
+
 unsigned int Echantillon::getTaille() const
 {
     return v.size();
@@ -26,6 +28,7 @@ const Valeur &Echantillon::getMaximum() const
 {
     if(v.empty())
         throw new Echantillon::MinMaxException{};
+    
     return *std::max_element(v.begin(), v.end());
 }
 
