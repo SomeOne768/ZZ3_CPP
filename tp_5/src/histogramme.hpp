@@ -3,18 +3,20 @@
 #include <vector>
 #include "echantillon.hpp"
 #include <set>
+#include <iostream>
 
-template <class T = std::set<Classe>>
+template <typename Foncteur = std::less<Classe>>
 class Histogramme
 {
-    T classes;
+    std::set<Classe, Foncteur> classes;
     void addClasse(const Classe &c);
+
 public:
     Histogramme(double borneInf, double borneSup, unsigned int nbClasses);
-    const T& getClasses() const;
+    const std::set<Classe, Foncteur> &getClasses() const;
     void ajouter(const Echantillon&);
 };
 
-using Histo = Histogramme<std::vector<Classe>>;
+using Histo = Histogramme<>;
 
-#include <histogramme.code.hpp>
+#include "histogramme.code.hpp"

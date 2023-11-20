@@ -37,17 +37,17 @@ public:
         return qty;
     }
 
-    void setBorneInf(double x) 
+    void setBorneInf(double x)
     {
         min = x;
     }
 
-    void setBorneSup(double x) 
+    void setBorneSup(double x)
     {
         max = x;
     }
 
-    void setQuantite(unsigned int n) 
+    void setQuantite(unsigned int n)
     {
         qty = n;
     }
@@ -57,13 +57,34 @@ public:
         qty++;
     }
 
-    bool operator<(const Classe&c) const
+    bool operator<(const Classe &c) const
     {
         return min < c.min;
     }
 
-    friend std::ostream& operator<<(std::ostream& os, const Classe& c) {
+    bool operator>(const Classe &c) const
+    {
+        return max > c.max;
+    }
+
+    friend std::ostream &operator<<(std::ostream &os, const Classe &c)
+    {
         os << "[" << c.min << ", " << c.max << "[ - qty:" << c.qty;
         return os;
     }
 };
+
+template <typename T = Classe>
+class ComparateurQuantite<T>
+{
+public:
+    bool operator()(const Classe &c1, const Classe &c2)
+    {
+        if(c1.getQuantite() < c2.getQuantite)
+            return true;
+        else if(c1.getQuantite() == c2.getQuantite())
+            return c1 < c2;
+        
+        return false;
+    }
+}

@@ -86,7 +86,7 @@ TEST_CASE ( "TP5_Echantillon::MinMax" ) {
 //------------------------------------------------------------------------------------------------ 8
 TEST_CASE ( "TP5_Echantillon::MinMaxException" ) {
  Echantillon e;
-  std::cout << "iciicicici\n";
+
  int error = 0;
 
  try { e.getMinimum().getNombre(); }
@@ -230,7 +230,7 @@ TEST_CASE ( "TP5_Histogramme::Generique" ) {
 }
 
 //----------------------------------------------------------------------------------------------- 15
-/*TEST_CASE ( "TP5_Histogramme::FoncteurGreater" ) {
+TEST_CASE ( "TP5_Histogramme::FoncteurGreater" ) {
  using histo_t = Histogramme<std::greater<Classe>>;
 
  histo_t h(5.0,15.0,5);
@@ -248,10 +248,10 @@ TEST_CASE ( "TP5_Histogramme::Generique" ) {
   REQUIRE ( c.getBorneSup() == Approx(bornesSup[i]) );
   REQUIRE ( c.getQuantite() == 0u );
  }
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 16
-/*TEST_CASE ( "TP5_Histogramme::ComparateurQuantite" ) {
+TEST_CASE ( "TP5_Histogramme::ComparateurQuantite" ) {
  using histo_t = Histogramme<ComparateurQuantite<Classe>>;
 
  double v[] = { 7.0, 9.0, 8.0, 5.0, 10.0, 14.0, 13.0, 6.0, 5.5, 13.5 };
@@ -274,7 +274,7 @@ TEST_CASE ( "TP5_Histogramme::Generique" ) {
   REQUIRE ( c.getQuantite() == quantites[i] );
   ++i;
  }
-}*/
+}
 
 //------------------------------------------------------------------------------------------------17
 /*TEST_CASE ( "TP5_Histogramme::Conversion" ) {
