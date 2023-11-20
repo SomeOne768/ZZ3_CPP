@@ -84,7 +84,7 @@ TEST_CASE ( "TP5_Echantillon::MinMax" ) {
 }
 #include <iostream>
 //------------------------------------------------------------------------------------------------ 8
-/*TEST_CASE ( "TP5_Echantillon::MinMaxException" ) {
+TEST_CASE ( "TP5_Echantillon::MinMaxException" ) {
  Echantillon e;
   std::cout << "iciicicici\n";
  int error = 0;
@@ -104,7 +104,7 @@ TEST_CASE ( "TP5_Echantillon::MinMax" ) {
  catch (...) { error=1; }
 
  REQUIRE ( error == 2 );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 9
 TEST_CASE ( "TP5_Echantillon::Indice" ) {
@@ -125,12 +125,12 @@ TEST_CASE ( "TP5_Echantillon::Indice" ) {
 
  REQUIRE ( error == 0 );
 
-//  try { e.getValeur(e.getTaille()); }
+ try { e.getValeur(e.getTaille()); }
 
-//  catch (const std::out_of_range & e) { error=2; }
-//  catch (...) { error=1; }
+ catch (const std::out_of_range & e) { error=2; }
+ catch (...) { error=1; }
 
-//  REQUIRE ( error == 2 );
+ REQUIRE ( error == 2 );
 }
 
 //----------------------------------------------------------------------------------------------- 10
