@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 
 class Classe
 {
@@ -74,17 +75,17 @@ public:
     }
 };
 
-template <typename T = Classe>
-class ComparateurQuantite<T>
+template <typename T>
+class ComparateurQuantite
 {
 public:
-    bool operator()(const Classe &c1, const Classe &c2)
+    bool operator()(const Classe &c1, const Classe &c2) const
     {
-        if(c1.getQuantite() < c2.getQuantite)
+        if(c1.getQuantite() > c2.getQuantite())
             return true;
         else if(c1.getQuantite() == c2.getQuantite())
             return c1 < c2;
         
         return false;
     }
-}
+};

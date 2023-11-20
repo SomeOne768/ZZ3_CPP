@@ -12,6 +12,19 @@ Histogramme<Foncteur>::Histogramme(double borneInf, double borneSup, unsigned in
 }
 
 template <typename Foncteur>
+template <typename F>
+Histogramme<Foncteur>::Histogramme(const Histogramme<F> &h)
+{
+    double borneInf = h.getClasses().begin()->getBorneInf();
+    double borneSup = h.getClasses().begin()->getBorneSup();
+    double delta = borneSup - borneInf;
+    delta /= h.getClasses().size();
+
+    for (auto c : h.getClasses())
+        addClasse(c);
+}
+
+template <typename Foncteur>
 const std::set<Classe, Foncteur> &Histogramme<Foncteur>::getClasses() const
 {
     return classes;
@@ -28,19 +41,26 @@ void Histogramme<Foncteur>::ajouter(const Echantillon &e)
 {
     for (unsigned int i = 0; i < e.getTaille(); i++)
     {
-        const Valeur &v = e.getValeur(i);
-        std::set<Classe, std::less<Classe>>::iterator it = std::find_if(classes.begin(), classes.end(),
-                                                                        [&v](const Classe &c)
-                                                                        {
-                                                                            return c.getBorneInf() <= v.getNombre() && v.getNombre() < c.getBorneSup();
-                                                                        });
-
-        if (it != classes.end())
-        {
-            Classe c{*it};
-            c.ajouter();
-            classes.erase(it);
-            addClasse(c);
-        }
+        ajouter(e.getValeur(i).getNombre());
     }
 }
+
+template <typename Foncteur>
+void Histogramme<Foncteur>::ajouter(double e)
+{
+    Valeur v{e};
+    std::set<Classe, std::less<Classe>>::iterator it = std::find_if(classes.begin(), classes.end(),
+                                                                    [&v](const Classe &c)
+                                                                    {
+                                                                        return c.getBorneInf() <= v.getNombre() && v.getNombre() < c.getBorneSup();
+                                                                    });
+
+    if (it != classes.end())
+    {
+        Classe c{*it};
+        c.ajouter();
+        classes.erase(it);
+        addClasse(c);
+    }
+}
+
