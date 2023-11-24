@@ -352,7 +352,7 @@ TEST_CASE ( "TP5_Etudiant::AccesseursConstants" ) {
 }
 
 //----------------------------------------------------------------------------------------------- 22
-/*TEST_CASE ( "TP5_Valeurs::Association" ) {
+TEST_CASE ( "TP5_Valeurs::Association" ) {
  using histo_t = Histogramme<>;
 
  double v[] = { 7.0, 9.0, 8.0, 5.0, 10.0, 14.0, 13.0, 6.0, 5.5, 13.5 };
@@ -376,7 +376,7 @@ TEST_CASE ( "TP5_Etudiant::AccesseursConstants" ) {
   REQUIRE ( p.second.getNote() == Approx(notes[i]) );
   ++i;
  }
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 23
 /*TEST_CASE ( "TP5_Valeurs::Intervalle" ) {

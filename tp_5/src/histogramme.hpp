@@ -4,12 +4,14 @@
 #include "echantillon.hpp"
 #include <set>
 #include <iostream>
+#include <map>
 
 template <typename Foncteur = std::less<Classe>>
 class Histogramme
 {
     std::set<Classe, Foncteur> classes;
     void addClasse(const Classe &c);
+    std::multimap<const Classe, Valeur> valueMap;
 
 public:
     Histogramme() = default;
@@ -19,6 +21,8 @@ public:
     const std::set<Classe, Foncteur> &getClasses() const;
     void ajouter(const Echantillon&);
     void ajouter(double);
+    const std::multimap<const Classe, Valeur> getValeurs() const;
+    
 };
 
 using Histo = Histogramme<>;

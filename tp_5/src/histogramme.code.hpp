@@ -61,6 +61,12 @@ void Histogramme<Foncteur>::ajouter(double e)
         c.ajouter();
         classes.erase(it);
         addClasse(c);
+        valueMap.insert(std::make_pair(c, v));
     }
 }
 
+template <typename Foncteur>
+const std::multimap<const Classe, Valeur>  Histogramme<Foncteur>::getValeurs() const
+{
+    return valueMap;
+}
