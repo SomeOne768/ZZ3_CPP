@@ -6,6 +6,7 @@
 #include <iostream>
 #include <map>
 
+using iter_t = std::multimap<const Classe, Valeur>::const_iterator;
 template <typename Foncteur = std::less<Classe>>
 class Histogramme
 {
@@ -22,6 +23,7 @@ public:
     void ajouter(const Echantillon&);
     void ajouter(double);
     const std::multimap<const Classe, Valeur> getValeurs() const;
+    std::pair<iter_t, iter_t> getValeurs(const Classe&) const;
     
 };
 

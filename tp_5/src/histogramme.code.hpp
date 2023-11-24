@@ -70,3 +70,9 @@ const std::multimap<const Classe, Valeur>  Histogramme<Foncteur>::getValeurs() c
 {
     return valueMap;
 }
+
+template <typename Foncteur>
+std::pair<iter_t, iter_t> Histogramme<Foncteur>::getValeurs(const Classe& c) const
+{
+    return valueMap.equal_range(c);
+}
