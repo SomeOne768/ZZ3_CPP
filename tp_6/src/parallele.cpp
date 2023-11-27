@@ -2,13 +2,13 @@
 #include <thread>
 #include <vector>
 #include "nombre.hpp"
+#include <mutex>
+#include <condition_variable>
 
 unsigned compteur = 0;
 
-// Thread 1 : for (unsigned i = 0; i<taille/4; ++i) a[i] = ++compteur;
-// Thread 2 : for (unsigned i = taille/4; i<2*taille/4; ++i) a[i] = ++compteur;
-// Thread 3 : for (unsigned i = 2*taille/4; i<3*taille/4; ++i) a[i] = ++compteur;
-// Thread 4 (principal) : for (unsigned i = 3*taille/4; i<taille; ++i) a[i] = ++compteur;
+std::mutex mutex;
+std::condition_variable condition;
 
 template <typename Callable>
 void for_sequentiel(int x, int y, Callable c)
@@ -28,12 +28,6 @@ void for_parallele(int debut, int fin, Callable c)
     for(int i=0; i<N; i++)
     {
         t[i] = std::thread(for_sequentiel<Callable>, i*taille/4, (i+1)*taille/4, c);
-        // t[i] = std::thread([&](int debut, int fin, Callable c)
-        //     {
-        //         for(int i=debut; i<fin; i++)
-        //             a[i] = ++compteur;                
-        //     }            
-        //     , debut + i*taille/4, debut + (i+1)*taille/4, c);
     }
 
     for(auto &thread : t)
@@ -48,14 +42,27 @@ int main()
     std::vector<Nombre> b(taille);
     std::vector<Nombre> c(taille);
 
-    for_parallele<4>(0, taille, [&](unsigned i){a[i] = ++compteur;});
+    auto mutexVersion = [&](unsigned i){
+        mutex.lock();
+        a[i] = ++compteur;
+        mutex.unlock();
+        };
+    
+    auto lockGardVersion = [&](unsigned i)
+    {
+        {std::lock_guard<std::mutex> verrou(mutex);
+        a[i] = ++compteur;}
+
+        condition.notify_all();
+    };
+
+    for_parallele<4>(0, taille, lockGardVersion);
 
     std::cout << "a = " << a << std::endl;
     std::cout << "b = " << b << std::endl;
     std::cout << "compteur = " << compteur << std::endl;
 
-    for_sequentiel(0, taille, [&](unsigned i)
-                   { a[i] = c[i] = a[i] * b[i]; });
+    for_sequentiel(0, taille, [&](unsigned i){ a[i] = c[i] = a[i] * b[i]; });
 
     std::cout << "c = " << c << std::endl;
 
