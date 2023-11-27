@@ -14,7 +14,7 @@ find_package ( Threads REQUIRED )
 
 # GNU C++ Options #---------------------------------------------------------------------------------
 if ( CMAKE_COMPILER_IS_GNUCXX )
- set ( CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic -pthread ${CMAKE_CXX_FLAGS}" )
+ set ( CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic -pthread -fsanitize=thread ${CMAKE_CXX_FLAGS}" )
 endif ()
 
 # Sources #-----------------------------------------------------------------------------------------
