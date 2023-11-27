@@ -6,3 +6,5 @@ CMakeCache.txt
 ../.vscode/
 build/
 .vscode/
+*.o
+tp_6/test/prog
