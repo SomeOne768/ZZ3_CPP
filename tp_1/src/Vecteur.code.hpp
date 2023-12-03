@@ -110,8 +110,9 @@ void Vecteur<T>::increaseTab(unsigned int n)
 }
 
 template <typename T>
-Vecteur<T> &operator+(Vecteur<T> &v, const Vecteur<T> &v2)
+Vecteur<T> &operator+(const Vecteur<T> &v, const Vecteur<T> &v2)
 {
+    Vecteur<T> v3;
     T *newTab = new T[v.size() + v2.size()];
     for(auto i=0; i<v.size(); i++)
     {
@@ -123,12 +124,11 @@ Vecteur<T> &operator+(Vecteur<T> &v, const Vecteur<T> &v2)
         newTab[i + v.size()] = v2[i];
     }
 
-    v.increaseTab(v.size() + v2.size());
+    v3._taille = v.size() + v2.size();
+    delete[] v3.tab;
+    v3.tab = newTab;
 
-    for(auto i=0; i<v.size(); i++)
-        v[i] = newTab[i];
-
-    return v;
+    return v3;
 }
 
 template <typename T>

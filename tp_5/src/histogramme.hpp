@@ -6,6 +6,21 @@
 #include <iostream>
 #include <map>
 
+
+// Pour rempalcer la lambda
+// class MyF
+// {
+// public:
+//     Valeur _v;
+//     MyF(Valeur v) : _v(v) {}
+
+//     bool operator()(const Classe &c) const
+//     {
+//          return c.getBorneInf() <= _v.getNombre() && _v.getNombre() < c.getBorneSup();
+//     }
+// };
+
+
 using iter_t = std::multimap<const Classe, Valeur>::const_iterator;
 template <typename Foncteur = std::less<Classe>>
 class Histogramme
